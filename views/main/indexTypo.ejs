@@ -1,0 +1,34 @@
+<%- include('head') %>
+
+<body style="overflow: hidden;">            
+    <div id="menu" class="menu-bar" scroll="yes">
+        <form id="graphMenu" class="graphMenu" name="graphMenu">
+            <%- include('../login')  %>                                                          
+            <%- include('../nodes/addType') %>
+            <%- include('../nodes/editType') %>                       
+        </form>
+    </div>
+    <div id="sidebar" class="menu-bar" scroll="yes">
+        <form id="graphMenu" class="graphMenu" name="graphMenu">    
+            <%- include('../desks/deskTypo')%>  
+            <%- include('../search') %>        
+            <%- include('../relations/relations') %> 
+            <%- include('../filters/pathP2P') %>                       
+            <%- include('../filters/depth') %>            
+            <%- include('../filters/section') %>            
+
+            <fieldset name="export" id="export" class="colLeft">
+                <br><button type="button" onclick="exportData()">Экспорт в файл</button><br>
+            </fieldset>
+            <fieldset name="search" id="refresh" class="colLeft">
+                <br><button type="button" onclick="updateGraph(true)">Обновить визуализацию</button><br>
+            </fieldset>
+
+        </form>
+    </div>
+
+    <div id="viz"></div>
+
+</body>
+
+</html>
